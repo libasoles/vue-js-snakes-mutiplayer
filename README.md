@@ -31,7 +31,7 @@ And run:
 
 Then visit http://localhost:3000
 
-#### Server
+#### Client
 
 You could just run the server and see the compiled version. But if you want to run the client for development purposes, then:
 
