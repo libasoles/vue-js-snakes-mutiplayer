@@ -58,7 +58,8 @@ export default {
   name: "app",
   created() {
     this.statuses = statuses;
-    this.socket = io("http://localhost:3000");
+    const isDevEnvironment = process.env.NODE_ENV !== 'production';
+    this.socket = io(isDevEnvironment ? `http://localhost:3000` : '/');
   },
   mounted: function() {
     this.socket.on("init", this.init);
