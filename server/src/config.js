@@ -1,7 +1,22 @@
 const blockSize = 10;
 
-module.exports = { // #f453f9
-  colors: ['#fb71ff', '#4a37ff', '#ffcb4f', '#914bff'],
+module.exports = {
+  colors: [
+    '#fb71ff', 
+    '#4a37ff', 
+    '#ffcb4f', 
+    '#914bff', 
+    '#37fff6',
+    '#ccff4f',
+    '#4fff95',
+    '#4fffe7',
+    '#934fff',
+    '#3f9dca',
+    '#7cb530',
+    '#5b940e',
+    '#5b8096',
+    '#af6899',
+  ],
   blockSize: 10,
   fruit: {
     color: "red",

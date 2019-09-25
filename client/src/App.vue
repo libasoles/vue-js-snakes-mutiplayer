@@ -3,7 +3,7 @@
     <div class="vertical-container">
       <div class="row" :style="{width: scene.dimensions.width+'px'}">
         <div class="message">{{message}}</div>
-        <img src="logo.png" alt="logo" class="logo" />
+        <img src="/public/logo.png" alt="logo" class="logo" />
       </div>
 
       <Scene
@@ -30,7 +30,6 @@ import io from "socket.io-client";
 
 import Scene from "./components/Scene.vue";
 import Keyboard from "./components/Keyboard";
-import Block from "./components/Block";
 
 const statuses = {
   ready: "ready",
@@ -130,8 +129,7 @@ export default {
   },
   components: {
     Scene,
-    Keyboard,
-    Block
+    Keyboard
   }
 };
 </script>
