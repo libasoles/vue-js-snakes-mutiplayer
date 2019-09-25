@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash.mergewith": "^4.6.2",
+    "nodemon": "^1.19.2",
+    "socket.io": "^2.3.0"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
