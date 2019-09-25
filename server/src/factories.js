@@ -10,7 +10,10 @@ const createSnake = (args) => {
 
   return new Snake({
     size: blockSize,
-    position: Position.getRandom(dimensions.width - blockSize, dimensions.heigth - blockSize),
+    position: Position.getRandom(
+      dimensions.width - blockSize, 
+      dimensions.heigth - blockSize
+    ),
     speed: snake.speed,
     color: config.colors[(Math.floor(Math.random() * 4))],
     ...args

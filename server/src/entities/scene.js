@@ -18,7 +18,6 @@ class Scene {
     this.onColission = onColission;
     this.onFruitEaten = onFruitEaten;
     this.onNewFruit = onNewFruit;
- //   this.update = this.update.bind(this);
   }
 
   getSnake(id) {
