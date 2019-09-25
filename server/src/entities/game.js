@@ -61,10 +61,7 @@ class Game {
       }
     });
 
-    client.on('move', snake.setDirection);
-    client.on('restart', () => {
-      this.restart(id);
-    });
+    this.bindEvents(client, snake);
 
     client.emit("init", {
       id,
@@ -75,22 +72,34 @@ class Game {
 
   restart(id) {
     const { scene } = this.getState();
+    const client = this.clients[id];
+    const snakes = scene.snakes;
 
-    const snakes = scene.snakes.map(snake => {
+    let revivedSnake;
+    for(const [i, snake] of snakes.entries()) {
       if(snake.id !== id) {
-        return snake;
+        continue;
       }
 
-      return this.createSnake({
+      revivedSnake = snakes[i] = this.createSnake({
         id,
         color: snake.color
       });
-    })
+    }
 
     this.setState({
       scene: {        
         snakes 
       }
+    });
+
+    this.bindEvents(client, revivedSnake);
+  }
+
+  bindEvents(client, snake) {
+    client.on('move', snake.setDirection);
+    client.on('restart', () => {
+      this.restart(client.id);
     });
   }
 
