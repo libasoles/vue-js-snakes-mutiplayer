@@ -2,6 +2,10 @@
 
 Basically, it's a `socket.io` + `Vue.js` exercise to try out a basic multiplayer game.
 
+See this repo to inspect the original `Vue.js` client.
+
+https://github.com/libasoles/vue-js-snake
+
 ### Design decisions
 
 - state is immutable, and handled by Game instance only
