@@ -11,6 +11,7 @@ app.get('/', function(request, response) {
   response.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-http.listen(3000, () => {
-  console.log("Listening at :3000...");
+const port = process.env.PORT || 3000;
+http.listen(port, () => {
+  console.log(`Listening at :${port}...`);
 });
