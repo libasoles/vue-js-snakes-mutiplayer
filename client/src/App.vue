@@ -38,6 +38,12 @@ const statuses = {
   gameOver: "game-over"
 };
 
+const messages = {
+  go: 'Go!',
+  eat: ['Yum!', 'Delicious!', 'That was a nice one!', 'Ñam!', 'I\'d like some more!'],
+  collision: 'Oh no!'
+};
+
 const initialState = {
   message: "",
   id: undefined,
@@ -60,7 +66,7 @@ export default {
     this.socket.on("snakes-positions", this.update);
     this.socket.on("fruit-eaten", fruit => this.fruitEaten(fruit));
     this.socket.on("new-fruit", fruit => this.addFruit(fruit));
-    this.socket.on("wall-collision", () => this.endGame("Oh no!"));
+    this.socket.on("wall-collision", () => this.endGame(messages.collision));
   },
   data: () => ({ ...initialState }),
   computed: {
@@ -79,20 +85,26 @@ export default {
     },
     start() {
       this.status = statuses.running;
-      this.displayTemporalMessage("Go!");
+      this.displayTemporalMessage(messages.go);
     },
     update({ snakes }) {
       this.scene.snakes = snakes;
     },
     fruitEaten(eatenFruit) {
       this.scene.fruits = this.scene.fruits.filter(f => f.id !== eatenFruit.id);
-      this.displayTemporalMessage("Yum!");
+      const message = messages.eat[Math.round(Math.random() * messages.eat.length)];
+      this.displayTemporalMessage(message);
     },
     addFruit(fruit) {
       this.scene.fruits.push(fruit);
     },
     setSnakeDirection(direction) {
-      if (this.status !== statuses.running) return;
+      if (this.status === statuses.ready) {
+        this.start();
+      }
+
+      if (this.status === statuses.gameOver)
+        return;
 
       this.socket.emit("move", { direction });
     },
