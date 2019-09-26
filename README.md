@@ -21,6 +21,7 @@ https://snakes-gperez78.azurewebsites.net/
 - state is immutable, and handled by Game instance only
 - only Game instance interacts with clients
 - there's a game loop, that notifies players their positions
+- dependency injection have default values. Mostly, DI is there to make tests easier.
 
 ## How to run?
 
