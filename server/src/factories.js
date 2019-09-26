@@ -15,7 +15,7 @@ const createSnake = (args) => {
       dimensions.heigth - blockSize
     ),
     speed: snake.speed,
-    color: config.colors[(Math.floor(Math.random() * 4))],
+    color: config.colors[(Math.floor(Math.random() * config.colors.length))],
     ...args
   })
 };
