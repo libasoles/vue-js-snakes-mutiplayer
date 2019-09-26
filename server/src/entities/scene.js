@@ -7,7 +7,7 @@ class Scene {
     snakes = [],
     fruits = [],
     createFruit,
-    onColission,
+    onCollision,
     onFruitEaten,
     onNewFruit,
   }) {
@@ -15,22 +15,18 @@ class Scene {
     this.snakes = snakes;
     this.fruits = fruits;
     this.createFruit = createFruit;
-    this.onColission = onColission;
+    this.onCollision = onCollision;
     this.onFruitEaten = onFruitEaten;
     this.onNewFruit = onNewFruit;
-  }
-
-  getSnake(id) {
-    return this.snakes.find(snake => id === snake.id);
   }
 
   update() {
     for (const snake of this.snakes) {
       snake.move();
- 
+
       const collides = this.checkCollision(snake);
-      if (collides) {
-        this.onColission(snake);
+      if (collides && !snake.isDead) {
+        this.onCollision(snake);
         snake.die();
       }
 

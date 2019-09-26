@@ -9,7 +9,7 @@ let game;
 /**
  * Game created
  */
-function connect(Http) {
+function initGameSocket(Http) {
   const io = socketio(Http);
   io.on("connection", onConnect);
 
@@ -23,7 +23,7 @@ function connect(Http) {
 const onConnect = (client) => {
   console.log('user connected', client.id);
   client.on('disconnect', () => disconnect(client));
-  
+
   game.addClient(client);
 }
 
@@ -35,4 +35,4 @@ const disconnect = (client) => {
   console.log('user disconnected', client.id);
 }
 
-module.exports = connect;
+module.exports = initGameSocket;

@@ -174,11 +174,11 @@ export default {
   border: none;
   outline: none;
   background: #6a9e8e;
-  color: white;  
+  color: white;
   font-size: 15px;
-  cursor: pointer;  
+  cursor: pointer;
   margin: auto auto;
-  top: 48px;  
+  top: 48px;
   position: absolute;
   height: 40px;
   width: 100px;

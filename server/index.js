@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const http = require("http").Server(app);
-const connect = require("./src/app");
-const path = require('path'); 
+const path = require('path');
+const initGameSocket = require("./src/app");
 
-connect(http);
+initGameSocket(http);
 
 app.use('/public', express.static(__dirname + '/public'));// Routing
 app.get('/', function(request, response) {

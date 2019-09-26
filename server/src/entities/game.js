@@ -35,7 +35,7 @@ class Game {
       ...sceneDimensions,
       fruits: [fruit],
       createFruit: this.createFruit.bind(this),
-      onColission: this.onColission.bind(this),
+      onCollision: this.onCollision.bind(this),
       onFruitEaten: this.onFruitEaten.bind(this),
       onNewFruit: this.onNewFruit.bind(this),
     });
@@ -88,8 +88,8 @@ class Game {
     }
 
     this.setState({
-      scene: {        
-        snakes 
+      scene: {
+        snakes
       }
     });
 
@@ -106,6 +106,8 @@ class Game {
   removeClient(clientId) {
     const { scene } = this.getState();
 
+    delete this.clients[clientId];
+
     this.setState({
       scene: {
         snakes: scene.snakes.filter(snake => snake.id !== clientId)
@@ -113,7 +115,7 @@ class Game {
     });
   }
 
-  onColission(snake) {
+  onCollision(snake) {
     this.clients[snake.id].emit('wall-collision');
   }
 
@@ -127,7 +129,7 @@ class Game {
 
   update() {
     const { scene } = this.getState();
-    
+
     scene.update();
     this.io.emit("snakes-positions", {
       snakes: scene.snakes

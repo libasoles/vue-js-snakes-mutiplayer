@@ -13,6 +13,7 @@ class Snake {
     color,
   }) {
     this.id = id;
+    this.isDead = false;
     this.head = { size, position };
     this.tail = tail;
     this.speed = speed;
@@ -24,14 +25,14 @@ class Snake {
   move() {
     const { head, tail } = this;
 
-    // move head   
+    // move head
     let previousPosition = { ...head.position };
     this.head.position = Position.add(
       this.head.position,
       this.direction
     );
 
-    // move tail   
+    // move tail
     let newTail = [];
     for (let chunk in tail) {
       const newPosition = Position.clone(previousPosition);
@@ -57,7 +58,7 @@ class Snake {
     else if (direction === directions.right) {
       delta.x += speed;
     }
- 
+
     this.direction = delta;
   }
 
@@ -72,7 +73,8 @@ class Snake {
   }
 
   die() {
-    this.speed = 0;   
+    this.isDead = true;
+    this.speed = 0;
     this.direction = new Position();
   }
 }
