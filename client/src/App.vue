@@ -186,7 +186,7 @@ export default {
 }
 
 .whoami {
-  font-size: 12px;
+  font-size: 14px;
   margin: auto auto;
 }
 

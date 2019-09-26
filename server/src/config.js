@@ -24,12 +24,12 @@ module.exports = {
   },
   scene: {
     dimensions: {
-      width: 500,
-      heigth: 250
+      width: 800,
+      heigth: 450
     }
   },
   snake: {
     speed: 10
   },
-  refreshRate: 1000 / 10
+  refreshRate: 1000 / 14
 }
