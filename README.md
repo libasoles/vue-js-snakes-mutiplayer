@@ -13,7 +13,7 @@ Play it online. Share the link and have fun!
 https://snakes-gperez78.azurewebsites.net/
 
 
-![Demo](https://github.com/libasoles/vue-js-snakes-mutiplayer/blob/master/screenshot/demo.gif)
+![Demo](https://github.com/libasoles/vue-js-snakes-mutiplayer/blob/master/snapshot/demo.gif)
 
 
 ### Design decisions
