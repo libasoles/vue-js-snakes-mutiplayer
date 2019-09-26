@@ -6,6 +6,12 @@ See this repo to inspect the original `Vue.js` client.
 
 https://github.com/libasoles/vue-js-snake
 
+## Demo
+
+https://snakes-gperez78.azurewebsites.net/
+
+Share the link and have fun!
+
 ### Design decisions
 
 - state is immutable, and handled by Game instance only

@@ -39,7 +39,7 @@ const statuses = {
 
 const messages = {
   go: 'Go!',
-  eat: ['Yum!', 'Delicious!', 'That was a nice one!', 'Ñam!', 'I\'d like some more!'],
+  eat: ['Yum!', 'Delicious!', 'That was a nice one!', 'Ñam!', 'I\'d like some more!', 'Tasty!'],
   collision: 'Oh no!'
 };
 
