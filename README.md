@@ -8,9 +8,13 @@ https://github.com/libasoles/vue-js-snake
 
 ## Demo
 
+Play it online. Share the link and have fun!
+
 https://snakes-gperez78.azurewebsites.net/
 
-Share the link and have fun!
+
+![Demo](https://github.com/libasoles/vue-js-snakes-mutiplayer/blob/master/screenshot/demo.gif)
+
 
 ### Design decisions
 
